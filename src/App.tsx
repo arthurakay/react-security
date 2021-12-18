@@ -1,4 +1,5 @@
 import React from 'react';
+import { createBrowserHistory } from 'history';
 import {
   BrowserRouter as Router,
   Routes,
@@ -13,6 +14,13 @@ import XssLink from './views/XSS-Link';
 import XssLinkFixed from './views/XSS-LinkFixed';
 import Architecture from './views/Architecture';
 import CSP from './views/CSP';
+
+const history = createBrowserHistory();
+
+const path = (/#!(\/.*)$/.exec(window.location.hash) || [])[1];
+if (path) {
+  history.replace(path);
+}
 
 function App() {
   return (

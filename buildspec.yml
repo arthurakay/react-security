@@ -2,7 +2,7 @@ version: 0.2
 
 environment_variables:
   plaintext:
-    S3_BUCKET: "hackingreact.com"
+    S3_BUCKET: "hackingreact.io"
 phases:
   build:
     commands:

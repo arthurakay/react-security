@@ -1,28 +1,25 @@
 import React, { useState } from 'react';
+import DOMPurify from 'dompurify';
 
-function XSSDefault() {
+function XSSFixed() {
   const [ userInput, setUserInput ] = useState('<img src="" onError="alert(42)" />');
+  const cleanHtml = DOMPurify.sanitize(userInput);
+
 
   return (
       <header className="Example">
-        
         <p>
-          Generally speaking, React treats all user-supplied content as a string
-          (rather than raw HTML).
-        </p>
-
-        <p>
-            This is a deliberate security feature in React.
-        </p>
-
-        <p>
-            As a result, most XSS attacks are blocked by default. 
+            Any time React needs to render user-supplied input -- particularly when using
+            dangerouslySetInnerHTML() -- you should use a XSS sanitized like DOMPurify.
         </p>
 
         <code>
             <pre>{`
+import DOMPurify from 'dompurify';
+// ...
+
 const [ userInput, setUserInput ] = useState('<img src="" onError="alert(42)" />');
-// try "<script>alert(42)</script>" and other XSS attempts too
+const cleanHtml = DOMPurify.sanitize(userInput);
 
 return (
     <>
@@ -38,9 +35,11 @@ return (
             User-supplied, unsanitized content: 
         </p>
 
-        <div className="example-output">
-            {userInput}
-        </div>
+        <div
+            className="example-output"
+            dangerouslySetInnerHTML={{ __html: cleanHtml }}
+        />
+
     </>
 );
             `}</pre>
@@ -58,23 +57,20 @@ return (
             User-supplied, unsanitized content: 
         </p>
 
-        <div className="example-output">
-            {userInput}
-        </div>
-
-        <p>
-            Notice that the XSS payload remains intact -- it's just not treated as raw HTML/JavaScript, 
-            so the payload is not executed.
-        </p>
+        <div
+            className="example-output"
+            dangerouslySetInnerHTML={{ __html: cleanHtml }}
+        />
 
         <a
           className="App-link"
-          href="/xss-vulnerable"
+          href="/xss-link"
         >
-          So... what's the problem?
+          Now user-supplied content can be trusted, even inside code that bypasses React's
+          builtin security features.
         </a>
       </header>
   );
 }
 
-export default XSSDefault;
+export default XSSFixed;

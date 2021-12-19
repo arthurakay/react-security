@@ -58,8 +58,19 @@ return (
         </p>
 
         <p>
-            Click <a href={userInput}>here</a>
-            if phishing didn't make you terrified of clicking links already...
+            The problem in this example is that web browsers support all kinds of link protocols --
+            not just HTTP and HTTPS.
+        </p>
+
+        <p>
+            In fact, "javascript:" is a valid protocol the browser will interpret as code to execute. 
+            (Some of you may be familiar 
+            with <a href="https://en.wikipedia.org/wiki/Bookmarklet" target="_blank">bookmarklets</a>).
+        </p>
+
+        <p>
+            So clicking <a href={userInput}>on this compromised link</a>
+            will execute any code after the "javascript:" protocol.
         </p>
 
         <p>

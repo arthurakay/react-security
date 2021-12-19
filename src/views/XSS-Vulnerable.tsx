@@ -5,9 +5,13 @@ function XSSVulnerable() {
 
   return (
       <header className="Example">
-        
         <p>
-          Sometimes developers need to bypass React's default security controls using:
+            Did you notice the JavaScript alert?
+        </p>
+
+        <p>
+          Sometimes developers think they need to bypass React's default security controls using
+          a utility function built into React:
         </p>
 
         <p>
@@ -31,8 +35,13 @@ return (
 
         <p>
             User-supplied, unsanitized content: 
-            <span dangerouslySetInnerHTML={{ __html: userInput }} />
         </p>
+
+        <div
+            className="example-output"
+            dangerouslySetInnerHTML={{ __html: userInput }}
+        />
+
     </>
 );
             `}</pre>
@@ -47,13 +56,24 @@ return (
         </p>
 
         <p>
-            User-supplied, unsanitized content: <span dangerouslySetInnerHTML={{ __html: userInput }} />
+            User-supplied, unsanitized content: 
         </p>
+
+        <div
+            className="example-output"
+            dangerouslySetInnerHTML={{ __html: userInput }}
+        />
+
+        <p>
+            Needless to say... you really shouldn't do that.
+        </p>
+
+
         <a
           className="App-link"
-          href="/xss-link"
+          href="/xss-fixed"
         >
-          So... you really shouldn't do that.
+          So how can we fix this problem?
         </a>
       </header>
   );

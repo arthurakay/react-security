@@ -43,13 +43,13 @@ function App() {
           <Route path="/xss-link-fixed" element={<XssLinkFixed />} />
 
           <Route path="/architecture" element={<Architecture />} />
-          <Route path="/attack-directinteraction" element={<AttackDirectInteraction />} />
+          {/* <Route path="/attack-directinteraction" element={<AttackDirectInteraction />} />
           <Route path="/attack-urlparams" element={<AttackUrlParams />} />
           <Route path="/attack-browserstorage" element={<AttackBrowserStorage />} />
           <Route path="/attack-apis" element={<AttackAPI />} />
           <Route path="/attack-postmessage" element={<AttackPostMessage />} />
 
-          <Route path="/csp" element={<CSP />} />
+          <Route path="/csp" element={<CSP />} /> */}
           <Route path="/thank-you" element={<ThankYou />} />
           <Route path="/" element={<Start />} />
         </Routes>

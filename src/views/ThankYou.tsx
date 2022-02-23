@@ -9,15 +9,20 @@ const ThankYou = () => {
 
             <p>
                 Thanks for taking the time to learn about hacking React apps!
-                If you want to talk tech, please reach out to me via my website:
+            </p>
+
+            <p>
+                I'll be launching an online course soon that expands on the content you've just seen.
+                Please follow the link below to learn more!
             </p>
 
             <a
                 className="App-link"
-                href="https://www.securewebsolutions.io"
+                href="https://mailchi.mp/9ef8866e0620/training"
                 target="_blank"
                 rel="noreferrer"
             >
+                "Intro to Hacking Web Applications" by <br />
                 Secure Web Solutions, LLC
             </a>
         </header>

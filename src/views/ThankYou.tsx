@@ -12,13 +12,14 @@ const ThankYou = () => {
             </p>
 
             <p>
-                I'll be launching an online course soon that expands on the content you've just seen.
-                Please follow the link below to learn more!
+                This website is included as part of my online course (link below). If you're 
+                interested in learning much more about web application security, hacker theory,
+                threat modeling and more... check it out!
             </p>
 
             <a
                 className="App-link"
-                href="https://mailchi.mp/9ef8866e0620/training"
+                href="https://securewebsolutions.teachable.com/p/intro-to-hacking-web-applications"
                 target="_blank"
                 rel="noreferrer"
             >

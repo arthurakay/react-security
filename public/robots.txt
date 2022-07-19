@@ -2,14 +2,24 @@
 User-agent: *
 Disallow:
 
+
 # HEY THERE, HACKER!
+#
 #
 # If you're looking for more cool content about hacking web apps,
 # be sure to check out https://www.cyberscavengerhunt.com/
 #
+#
 # Or drop me a link via https://www.securewebsolutions.io/
+#
+#
+# You can also get my online course "Intro to Hacking Web Applications" 
+# for 10% off with coupon code HACKINGREACT
+# https://securewebsolutions.teachable.com/p/intro-to-hacking-web-applications
+#
 #
 # This web page is currently a work in progress, but I'd love any
 # and all feedback!
+#
 #
 # Happy hacking!
